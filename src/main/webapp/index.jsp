@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>   
 <!DOCTYPE html>
 <html>
@@ -10,29 +11,30 @@
 
 <h1>List of albums</h1>
 
-<%-- <p>Welcome back, ${cookie.firstNameCookie.value}</p> --%>
 <!-- Chỉ hiển thị lời chào nếu cookie có giá trị -->
 <c:if test="${not empty cookie.firstNameCookie.value}">
-    <p>Welcome back, <c:out value="${cookie.firstNameCookie.value}" />!</p>
+    <p class="welcome">Welcome back, 
+        <c:out value="${cookie.firstNameCookie.value}" />!
+    </p>
 </c:if>
 
-<p>
-<a href="download?action=checkUser&amp;productCode=8601">
-    86 (the band) - True Life Songs and Pictures
-</a><br>
+<div class="album-list">
+    <a href="download?action=checkUser&amp;productCode=ST">
+        Son Tung MTP
+    </a>
 
-<a href="download?action=checkUser&amp;productCode=pf01">
-    Paddlefoot - The First CD
-</a><br>
+    <a href="download?action=checkUser&amp;productCode=J97">
+        Jack
+    </a>
 
-<a href="download?action=checkUser&amp;productCode=pf02">
-    Paddlefoot - The Second CD
-</a><br>
+    <a href="download?action=checkUser&amp;productCode=BAT">
+        Bui Anh Tuan
+    </a>
 
-<a href="download?action=checkUser&amp;productCode=jr01">
-    Joe Rut - Genuine Wood Grained Finish
-</a>
-</p>
+    <a href="download?action=checkUser&amp;productCode=binz">
+        Binz
+    </a>
+</div>
 
 </body>
 </html>
